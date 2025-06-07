@@ -7,9 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.2.2
       with:
         fetch-depth: 0
-    - uses: coursier/cache-action@v6.4.5
-    - uses: VirtusLab/scala-cli-setup@v1.4.3
+    - uses: coursier/cache-action@v6.4.7
+    - uses: VirtusLab/scala-cli-setup@v1.8.1
     - run: scala-cli test .
