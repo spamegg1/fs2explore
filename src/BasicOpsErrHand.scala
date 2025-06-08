@@ -28,3 +28,10 @@ def run: Unit =
 
   try err3.compile.drain.unsafeRunSync()
   catch case e: Exception => println(e)
+
+  err1
+    .handleErrorWith: e =>
+      Stream.emit(e.getMessage)
+    .compile
+    .toList
+    .unsafeRunSync()
